@@ -1,0 +1,17 @@
+/* DROP MENU */
+.category_drop{
+   display: none;
+}
+.category_menu:hover .category_drop{
+    display: block;
+}
+
+/* SETUP SCROLLBAR */
+.custom-scrollbar::-webkit-scrollbar {
+    display: none; /* Ẩn thanh cuộn trên Chrome, Safari */
+  }
+  .custom-scrollbar {
+    -ms-overflow-style: none;  /* Ẩn thanh cuộn trên IE/Edge */
+    scrollbar-width: none;      /* Ẩn thanh cuộn trên Firefox */
+  }
+  
