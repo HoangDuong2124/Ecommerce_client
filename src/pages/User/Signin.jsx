@@ -1,8 +1,8 @@
-import Header from "../../components/layout/Header";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useContext,useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
+import Header from "../../components/layout/user/Header";
 const Signin = () => {
   const navigate = useNavigate();
   const { login } = useContext(AuthContext);
@@ -55,7 +55,7 @@ const Signin = () => {
 
   return (
     <div>
-      <Header />
+       <Header/>
       <div className="w-full mt-7 text-center">
         <h1 className="text-2xl font-bold">Đăng nhập với</h1>
         <div className="my-6 flex items-center justify-center gap-7">

@@ -1,8 +1,8 @@
 import { useState } from "react";
-import Header from "../../components/layout/Header";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Header from "../../components/layout/user/Header";
 const Signup = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -20,7 +20,8 @@ const Signup = () => {
     let newErrors = {};
 
     if (!formData.name.trim()) newErrors.name = "Tên không được để trống";
-    if (!formData.phoneNumber.trim()) newErrors.phoneNumber = "Số điện thoại không được để trống";
+    if (!formData.phoneNumber.trim())
+      newErrors.phoneNumber = "Số điện thoại không được để trống";
     if (!formData.email.trim()) {
       newErrors.email = "Email không được để trống";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
@@ -70,45 +71,56 @@ const Signup = () => {
         </div>
         <div className="w-[50%] mx-auto">
           <form onSubmit={handleSubmit}>
-          <input
-            className="w-full py-1 my-3 outline-none border-b border-b-slate-300"
-            type="text"
-            placeholder="Nhập họ và tên"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-          />
-          <p className="text-left text-red-800 text-xs font-semibold">{errors.name}</p>
-          <input
-            className="w-full py-1 my-3 outline-none border-b border-b-slate-300"
-            type="text"
-            placeholder="Nhập số điện thoại"
-            name="phoneNumber"
-            value={formData.phoneNumber}
-            onChange={handleChange}
-          />
-          <p className="text-left text-red-800 text-xs font-semibold">{errors.phone}</p>
-          <input
-            className="w-full py-1 my-3 outline-none border-b border-b-slate-300"
-            type="email"
-            placeholder="Nhập email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-          />
-          <p className="text-left text-red-800 text-xs font-semibold">{errors.email}</p>
-          <input
-            className="w-full py-1 my-3 outline-none border-b border-b-slate-300"
-            type="password"
-            placeholder="Nhập mật khẩu"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-          />
-          <p className="text-left text-red-800 text-xs font-semibold">{errors.password}</p>
-          <button type="submit" className="w-full h-9 mt-5 bg-[#E0052B] rounded-lg text-[#FFFFFF] text-lg font-bold ">
-            Đăng ký
-          </button>
+            <input
+              className="w-full py-1 my-3 outline-none border-b border-b-slate-300"
+              type="text"
+              placeholder="Nhập họ và tên"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+            />
+            <p className="text-left text-red-800 text-xs font-semibold">
+              {errors.name}
+            </p>
+            <input
+              className="w-full py-1 my-3 outline-none border-b border-b-slate-300"
+              type="text"
+              placeholder="Nhập số điện thoại"
+              name="phoneNumber"
+              value={formData.phoneNumber}
+              onChange={handleChange}
+            />
+            <p className="text-left text-red-800 text-xs font-semibold">
+              {errors.phone}
+            </p>
+            <input
+              className="w-full py-1 my-3 outline-none border-b border-b-slate-300"
+              type="email"
+              placeholder="Nhập email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+            />
+            <p className="text-left text-red-800 text-xs font-semibold">
+              {errors.email}
+            </p>
+            <input
+              className="w-full py-1 my-3 outline-none border-b border-b-slate-300"
+              type="password"
+              placeholder="Nhập mật khẩu"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+            />
+            <p className="text-left text-red-800 text-xs font-semibold">
+              {errors.password}
+            </p>
+            <button
+              type="submit"
+              className="w-full h-9 mt-5 bg-[#E0052B] rounded-lg text-[#FFFFFF] text-lg font-bold "
+            >
+              Đăng ký
+            </button>
           </form>
           <div className="w-full mt-4 flex items-center justify-center gap-1 text-sm">
             <p className="text-[#777777]">Bạn đã có tài khoản?</p>
